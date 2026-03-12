@@ -1,0 +1,33 @@
+html {
+    background-color: #333;
+}
+
+p{
+    color: whitesmoke;
+}
+
+h1,h2 {
+    color: whitesmoke;
+}
+
+label{
+    color: whitesmoke;
+}
+
+.simple-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.simple-btn:hover {
+  background: #e9ecef;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

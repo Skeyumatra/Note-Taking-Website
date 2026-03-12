@@ -5,17 +5,16 @@ from .models import User
 # Create your views here.
 
 def loginPage(request):
-    form=LoginForm()  #taking forms for name and password object
     if request.method=="POST":
-        form=LoginForm(request.POST) #getting the input
-        if form.is_valid():
-            name=form.cleaned_data["name"] #input's name object
-            user=User.objects.only("name","password","isOnline").get(name=name) #getting name and password object from db
-            if user.password==form.cleaned_data["password"]: #if input's password equals to the password in db
-                user.isOnline=True
-                user.save()
-                return redirect(f"/home/{user.name}") #redirect home
-    return render(request,"login.html",{"form":form})
+        form=request.POST #getting the input
+        name=form.get("name") #input's name object
+        password=form.get("password")
+        user=User.objects.only("name","password","isOnline").get(name=name) #getting name and password object from db
+        if user.password==form.get("password"): #if input's password equals to the password in db
+            user.isOnline=True
+            user.save()
+            return redirect(f"/home/{user.name}") #redirect home
+    return render(request,"accounts/login.html")
 
 def register(request):
     form=LoginForm() #taking the forms
@@ -30,5 +29,5 @@ def register(request):
             online.isOnline=True #automatically log in
             online.save()
             return redirect(f"/home/{form.cleaned_data["name"]}") #redirecting user's page
-    return render(request,"register.html",{"form":form})
+    return render(request,"accounts/register.html",{"form":form})
 
