@@ -31,3 +31,24 @@ label{
   border-color: #667eea;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+
+.title-label{
+    margin-left: 54em;
+}
+
+.title-text{
+    margin-bottom: 10em;
+    margin-left: 51em;
+    width: 30em;
+}
+
+.content-label {
+    margin-left: 53em;
+}
+
+.content-text-area {
+    margin-left: 53.5em;
+    width: 40em;
+    height: 30em;
+}

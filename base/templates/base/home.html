@@ -5,15 +5,18 @@
     <h2>Notes:</h2>
     <ul>
       {% for note in notes%}
-      <li ><a href="/notes/{{user.name}}/{{note.pk}}" class="simple-btn">{{note.title}}</a></li>
+      <li>
+        <a href="/notes/{{user.name}}/{{note.pk}}" class="simple-btn">{{note.title}}</a> 
+      </li>
       {% endfor%}
     </ul>
 </div>
 
 <div>
-<form action="" method="post">
-    {%csrf_token%}
-    <button type="button" onclick="window.location.href='/exit/{{user.name}}'">Exit</button>  <!--exit from account button-->
-</form>
+    <button type="button" onclick="window.location.href='/addNote/{{user.name}}'" class="simple-btn">Add</button>
+    <form action="" method="post">
+        {%csrf_token%}
+        <button type="button" onclick="window.location.href='/exit/{{user.name}}'" class="simple-btn">Exit</button>  <!--exit from account button-->
+    </form>
 </div>
 {%endblock%}

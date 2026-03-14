@@ -3,4 +3,8 @@
 {%block content%}
 <h1>{{note.title}}</h1>
 <p>{{note.content}}</p>
+<div>
+<button type="button" onclick="window.location.href='/updateNote/{{name}}/{{note.id}}'" class="simple-btn">Update</button>
+<button type="button" onclick="window.location.href='/deleteNote/{{name}}/{{note.id}}'" class="simple-btn">Delete</button>
+</div>
 {%endblock%}
